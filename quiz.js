@@ -229,22 +229,22 @@
     let emoji = '';
     
     if (percentage === 100) {
-      remark = 'QUIZ MASTER!';
+      remark = 'You’re a real perlian lfg!!';
       emoji = '🏆';
     } else if (percentage >= 80) {
-      remark = 'QUIZ WHIZ!';
+      remark = 'You’re a real perlian lfg!';
       emoji = '🌟';
     } else if (percentage >= 60) {
-      remark = 'QUIZ SMART!';
+      remark = 'You're on track ggs';
       emoji = '📚';
     } else if (percentage >= 40) {
-      remark = 'KEEP LEARNING!';
+      remark = 'You're on track ggs';
       emoji = '🌱';
     } else if (percentage >= 20) {
-      remark = 'GOOD TRY!';
+      remark = 'are you even a community member? ';
       emoji = '👍';
     } else {
-      remark = 'KEEP PRACTICING!';
+      remark = 'are you even a community member? ';
       emoji = '💪';
     }
     
