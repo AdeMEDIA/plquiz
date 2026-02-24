@@ -1023,3 +1023,13 @@ body.light-mode .btn-next {
     width: 100%;
   }
 }
+
+.quiz-wrapper::before {
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
