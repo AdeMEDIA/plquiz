@@ -1,48 +1,88 @@
-// QUESTION BANK - Add or edit questions here
+// QUESTION BANK - Updated with Perle Labs questions
 window.questionBank = [
   {
-    question: "Which element has the highest melting point?",
-    options: ["Tungsten", "Carbon", "Iron", "Platinum"],
-    correct: 0
+    question: "What is the primary mission of Perle Labs?",
+    options: [
+      "Build trading bots",
+      "Create a decentralized exchange", 
+      "Enable expert-verified AI data contribution and validation",
+      "Launch an AI that does human tasks"
+    ],
+    correct: 2  // C
   },
   {
-    question: "What is the rarest M&M color?",
-    options: ["Brown", "Blue", "Red", "Green"],
-    correct: 0
+    question: "Who out of these people isn't a mod in the Perle Labs Discord?",
+    options: [
+      "Super Dad Eazy",
+      "Cute Simba", 
+      "Big Daddy Vinex",
+      "Beautiful Dahlia"
+    ],
+    correct: 3  // D
   },
   {
-    question: "Who painted 'The Starry Night'?",
-    options: ["Monet", "Van Gogh", "Picasso", "Rembrandt"],
-    correct: 1
+    question: "Who should ideally complete specialized tasks on Perle Labs?",
+    options: [
+      "Anyone looking to earn fast rewards",
+      "Verified contributors with relevant expertise",
+      "Automated bots",
+      "Anonymous users without review"
+    ],
+    correct: 1  // B
   },
   {
-    question: "What is the fastest land animal?",
-    options: ["Lion", "Cheetah", "Peregrine Falcon", "Pronghorn"],
-    correct: 1
+    question: "Which day of the week does the Perle open mic event occur?",
+    options: [
+      "Thursday",
+      "Wednesday",
+      "Friday", 
+      "Tuesday"
+    ],
+    correct: 0  // A
   },
   {
-    question: "Which planet has the most moons?",
-    options: ["Jupiter", "Saturn", "Uranus", "Neptune"],
-    correct: 1
+    question: "Which of these roles is not acquirable in the Perle Labs Discord server?",
+    options: [
+      "Perle Voyager",
+      "Perle Explorer",
+      "Perle Contributor", 
+      "Perle Navigator"
+    ],
+    correct: 2  // C
   },
   {
-    question: "In what year was the first iPhone released?",
-    options: ["2005", "2006", "2007", "2008"],
-    correct: 2
+    question: "Which industries benefit most from expert-validated AI data?",
+    options: [
+      "Healthcare",
+      "Legal",
+      "Finance",
+      "All of the above"
+    ],
+    correct: 3  // D
   },
   {
-    question: "What is the chemical symbol for gold?",
-    options: ["Go", "Gd", "Au", "Ag"],
-    correct: 2
+    question: "Who is the first community member to be invited to speak in the Perle Labs open mic session live on Discord?",
+    options: [
+      "Wellstine",
+      "Miss J",
+      "Simba",
+      "Thai"
+    ],
+    correct: 0  // A
   },
   {
-    question: "Which country invented pizza?",
-    options: ["France", "Italy", "Greece", "USA"],
-    correct: 1
+    question: "What determines a contributor's reputation on Perle?",
+    options: [
+      "Number of referrals",
+      "Social media followers",
+      "Accuracy, consistency, and quality of completed tasks",
+      "Wallet balance"
+    ],
+    correct: 2  // C
   }
 ];
 
-// HELPER FUNCTION: Shuffle array (Fisher-Yates)
+// Shuffle array (keeping your existing helper functions)
 window.shuffleArray = function(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -51,28 +91,22 @@ window.shuffleArray = function(array) {
   return array;
 };
 
-// HELPER FUNCTION: Get shuffled questions with shuffled options
+// Get shuffled questions
 window.getShuffledQuestions = function() {
-  // First, shuffle the questions order
   let shuffled = window.shuffleArray([...window.questionBank]);
   
-  // Then for each question, shuffle its options BUT track the correct answer
   return shuffled.map(q => {
-    // Create array of options with their original indices
-    const optionsWithIndex = q.options.map((opt, idx) => ({
+    let optionsWithIndex = q.options.map((opt, idx) => ({
       text: opt,
       originalIndex: idx
     }));
     
-    // Shuffle the options
-    const shuffledOptions = window.shuffleArray([...optionsWithIndex]);
+    let shuffledOptions = window.shuffleArray([...optionsWithIndex]);
     
-    // Find where the correct answer moved to
-    const newCorrectIndex = shuffledOptions.findIndex(
+    let newCorrectIndex = shuffledOptions.findIndex(
       opt => opt.originalIndex === q.correct
     );
     
-    // Return new question with shuffled options and updated correct index
     return {
       question: q.question,
       options: shuffledOptions.map(opt => opt.text),
@@ -80,3 +114,17 @@ window.getShuffledQuestions = function() {
     };
   });
 };
+
+// Answer key reference (for your verification)
+window.answerKey = {
+  1: "C - Enable expert-verified AI data contribution and validation",
+  2: "D - Beautiful Dahlia",
+  3: "B - Verified contributors with relevant expertise",
+  4: "A - Thursday",
+  5: "C - Perle Contributor",
+  6: "D - All of the above",
+  7: "A - Wellstine",
+  8: "C - Accuracy, consistency, and quality of completed tasks"
+};
+
+console.log("✅ Perle Labs questions loaded!");
